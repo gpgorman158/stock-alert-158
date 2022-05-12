@@ -145,8 +145,8 @@ function TickerDetails({stock, user, onAddStock}) {
         }
       }, [ticker, timeFreq, endDate, startDate]);
 
-      useEffect(() => {
-        if(ticker !== false){
+    useEffect(() => {
+        if(ticker !== ""){
             fetch(`/stocks`).then((r) => {
                 if (r.ok) {
                     r.json().then((databaseStocksJson) => {
