@@ -42,7 +42,7 @@ console.log((ticker))
             
             }
             ws.onmessage = ({data}) => {
-                ws.send(`{"action":"subscribe","params":"AM.${defaultStock}"`)
+                ws.send(`{"action":"subscribe","params":"A.${defaultStock}"`)
                 const [message] = JSON.parse(data);
                 console.log(data)
                 console.log(ws)
