@@ -1,0 +1,2 @@
+class AlertJoinsController < ApplicationController
+end

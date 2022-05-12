@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :stock_joins, only: [:index, :create]
+  resources :alert_joins
+  resources :alerts
+  resources :stocks, only: [:index, :create]
+  resources :users, only: [:index, :update]
 
-  get '/hello', to: 'application#hello_world'
+  delete "/stock_joins/:stock_id/:user_id", to: "stock_joins#custom_destroy"
+
+  get "/stocks/:ticker", to: "stocks#show"
+  
+  get "/auto_login", to: "users#show"
+  post "/sign_up", to: "users#create"
+
+  post '/login_back', to: "sessions#create"
+  delete '/logout_back', to: "sessions#destroy"
 
   get '*path',
       to: 'fallback#index',
