@@ -9,7 +9,7 @@ function BarChart({ohlc, chartOne}) {
     
     return (
         <>
-            {chartOne ? 
+            {chartOne && chartOne.results ? 
             <Line 
              data={{
                 labels: chartOne.results.map(stock => {

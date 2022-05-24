@@ -9,7 +9,7 @@ import Home from './Home'
 import Explore from './Explore'
 import Footer from './Footer'
 import WebSocketStock from './WebSocketStock'
-import Email from './Email'
+import Extra from './Extra'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -107,8 +107,8 @@ function App() {
           <Route path="/explore/:ticker">
             <Explore stock={stock} user={user} onAddStock={onAddStock}/>
           </Route>
-          <Route exact path="/secret-email">
-            <Email />
+          <Route exact path="/extra">
+            <Extra />
           </Route>
         </Switch>
         <Footer onSubscribe={onSubscribe}/>

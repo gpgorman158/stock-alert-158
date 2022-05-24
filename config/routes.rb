@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :stock_joins, only: [:index, :create]
   resources :alert_joins
   resources :alerts
-  resources :stocks, only: [:index, :create]
+  resources :stocks, only: [:index, :create, :update]
   resources :users, only: [:index, :update]
 
   delete "/stock_joins/:stock_id/:user_id", to: "stock_joins#custom_destroy"

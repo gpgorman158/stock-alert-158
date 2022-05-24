@@ -20,7 +20,7 @@ function MultiBar( {chartTwo} ) {
 
     return (
         <>
-            {chartTwo ? 
+            {chartTwo && chartTwo.results ? 
             <Bar 
              data={{
                 labels: chartTwo.results.map(stock => {

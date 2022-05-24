@@ -112,8 +112,9 @@ function TickerDetails({stock, user, onAddStock}) {
             fetch(`/stocks/${ticker}`).then((r) => {
                 if (r.ok) {
                   r.json().then((databaseTickerJson) => {
-                    setDatabaseTicker(databaseTickerJson.ticker)
                     console.log(databaseTickerJson.ticker)
+                    setDatabaseTicker(databaseTickerJson.ticker)
+                    
                   });
                 }
             });
@@ -134,6 +135,7 @@ function TickerDetails({stock, user, onAddStock}) {
             fetch(`https://api.polygon.io/v2/aggs/ticker/${ticker}/range/1/${timeFreq}/${startDate}/${endDate}?adjusted=true&sort=asc&limit=50000&apiKey=Mjklp2ow_hsSIwEGLIN_mjakIdlE2mKP`).then((r) => {
                 if (r.ok) {
                   r.json().then((chartJson) => {
+                    console.log(chartJson)
                     setChartOne(chartJson)
                     setChartTwo(chartJson)
                   });

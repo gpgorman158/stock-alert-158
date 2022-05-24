@@ -18,9 +18,6 @@ function Profile({user, favorites, onDeleteFavorite}) {
         })
     }
     console.log(favorites)
-    //I have user ID
-    //I have stock ID
-    //search for both ids and then delete join based on those found IDs
     
     
     return (
